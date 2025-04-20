@@ -1,0 +1,14 @@
+@import "css/clubs.css";
+@import "css/index.css";
+@import "css/introduce-club.css";
+@import "css/nav_bar.css";
+@import "css/login.css";
+
+body {
+    margin : 0px;
+    height : 250vh;
+}
+
+.Home {
+    height : 100%;
+}

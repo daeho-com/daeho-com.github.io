@@ -1,0 +1,44 @@
+.introduce-club-field__title {
+    width : 100%;
+    margin : 140px 0px;
+    text-align : center;
+    box-sizing: border-box;
+    padding : 0px 40px;
+}
+
+.introduce-club-field__title>h1 {
+    padding-bottom : 16px;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.5); /* 제목 밑에 밑줄 긋기 */
+}
+
+.introduce-club-list {
+    padding : 0px 40px;
+}
+
+.introduce-club-column {
+    display : flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top : 68px;
+}
+
+
+.introduce-club-column-one {
+    text-align: center;
+    border : 3px solid rgba(41, 53, 139, 0.66);
+    padding : 40px;
+    font-size : 20px
+}
+
+.introduce-club-column-one>a>i {
+    font-size : 36px;
+    float : right;
+    margin-right : 20px;
+}
+
+.introduce-club-column-one img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
