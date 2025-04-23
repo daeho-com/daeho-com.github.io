@@ -1,0 +1,162 @@
+/* ================================================= */
+/* 전체 리셋 및 기본 스타일                        */
+/* ================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* 패딩 및 보더 포함 크기 계산 */
+}
+
+body {
+  background-color: #f5f5f5; /* 페이지 배경색 */
+}
+
+/* ================================================= */
+/* 사이드바(고정)                                    */
+/* ================================================= */
+.sidebar {
+  width: 200px;
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  position: fixed;   /* 화면 고정 */
+  top: 0;
+  left: 0;
+  height: 100vh;     /* 화면 전체 높이 */
+  overflow-y: auto;  /* 넘칠 경우 스크롤 */
+  z-index: 1000;     /* 다른 콘텐츠 위 */
+}
+
+.sidebar button {
+  padding: 10px;
+  font-size: 14px;
+  border: 2px solid #bbb;
+  background-color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.sidebar button:hover {
+  background-color: #f0f0f0;
+}
+
+/* ================================================= */
+/* 메인 콘텐츠                                     */
+/* ================================================= */
+.main-content {
+  margin-left: 220px; /* 사이드바 너비만큼 여백 */
+  padding: 20px;
+}
+
+/* ================================================ */
+/* 배경 이미지 및 텍스트 오버레이                   */
+/* ================================================ */
+.main-content img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.text-overlay {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-align: center;
+}
+.text-overlay div {
+  font-size: 75px;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  font-family: 'Courier New', monospace;
+  white-space: nowrap;
+}
+
+/* ================================================= */
+/* 메인 콘텐츠 두 번째 섹션 (말풍선, 코드 영역 등)  */
+/* ================================================= */
+.main-content-two {
+  margin-left: 220px;
+  padding: 20px;
+}
+
+.section {
+  background-color: #D9E0FF;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 367px;
+  height: 64px;
+  margin-left: 30px;
+  text-align: center;
+  border-radius: 15px;
+  border-bottom-left-radius: 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.code-column {
+  display: flex;
+  justify-content: flex-end; /* 오른쪽 정렬 */
+}
+
+/* 코드 표시 박스 */
+.code-section,
+.code-section2,
+.section-reverse {
+  background-color: #FFC56A;
+  padding: 20px;
+  font-family: monospace;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  border-bottom-right-radius: 0;
+}
+.code-section { width: 500px; height: 256px; }
+.code-section2 { width: 800px; height: 500px; }
+.section-reverse {
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+/* 멀티 로우 텍스트 정렬 */
+.multi-rows {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  text-align: center;
+  padding: 32px;
+}
+
+/* 강조 텍스트 */
+.highlight {
+  font-weight: bold;
+  color: rgba(255,56,56,1);
+  font-size: 22px;
+}
+
+/* ================================================= */
+/* 최종 실습창 버튼                                */
+/* ================================================= */
+.update-button,
+.newdate-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.update-button {
+  background-color: #4CAF50;
+  width: 100px;
+}
+.update-button:hover { background-color: #45a049; }
+
+.newdate-button {
+  background-color: #F78CFF;
+  width: 150px;
+  margin-left: 30px;
+}
+
+

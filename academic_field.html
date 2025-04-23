@@ -7,33 +7,42 @@
     <title>Academic_field</title>
 </head>
 <body>
-    <!--내비게이션 창 fix-->
+    <!-- ✅ 상단 고정 내비게이션 바 -->
     <nav class = "nav_bar">
         <div class = "top_nav">
+            <!-- 사이트 메인 페이지로 이동하는 링크 -->
             <a class="site-name" href = "index.html">사이트 이름</a>
+            <!-- 주요 섹션으로 이동하는 메뉴 링크 -->
             <a class = "center-link" href = "clubs_introduce.html">사이트 소개</a>
             <a class = "center-link" href = "clubs.html">동아리</a>
             <a class = "center-link" href = "credit_calculator.html">학점 계산기</a>
+            <a class = "center-link" href = "main-home.html">HTML/CSS 스터디</a>
+            <!-- 로그인 페이지 링크 -->
             <a class = "top_nav-login" href="login.html">로그인</a>
         </div>
     </nav>
 
+    <!-- ✅ 페이지 헤더: 배경 이미지와 제목, 네비게이션 정보 -->
     <header class = "title-page">
         <div class = "title-page-bg">
+            <!-- 배경 이미지 -->
             <img class = "title-page-bg-img" src ="https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F003%2F2023%2F08%2F29%2FNISI20230822_0001345631_web_20230822085356_20230829060313000.jpg&type=sc960_832">
-            
-            <div class = "title-page-intro"><p>중앙동아리<></div>
+            <!-- 페이지 소개 텍스트 -->
+            <div class = "title-page-intro"><p>중앙동아리</p></div>
 
+            <!-- 홈 > 중앙동아리 > 학술분과 ... 형식의 경로 안내 -->
             <div class = "title-page-comment">
+                <!-- 홈 아이콘 -->
                 <a href="index.html" class = "title-page_icon"><i class="fa-solid fa-house"></i></a>
-    
+
                 <div class ="title-page-comment_column">
                     <dl class = "title-page-comment_column-first">
                         <dt>
                             <a href = "">중앙동아리</a>
                         </dt>
                     </dl>
-    
+
+                    <!-- ✅ 학술분과 메뉴 펼치기 -->
                     <div class ="title-page-comment_column">
                         <dl class = "title-page-comment_column-second">
                             <dt>
@@ -56,147 +65,111 @@
         </div>
     </header>
 
-    <main class = "introduce-club">
+    <!-- ✅ 학술 동아리 목록 카드 형식으로 구성 -->
+    <main class = "aca_container">
         <div class = "introduce-club-field">
             <div class = "introduce-club-field__title">
-                <h1>학술분야</h1>
+                <h1 class="aca_h1">학술분야</h1>
             </div>
 
-            <div class = "introduce-club-list">
-                <div class="introduce-club-column">
-                    <div class="introduce-club-column-one">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ76OQhvILm4R7gbiUccPwGkfyf7L3j8taKhA&s">
-                        <h3>ACE</h3>
-                        <a href="https://www.instagram.com/ace_soongsil/">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
-                    <div class="introduce-club-column-one">
-                        <img src="http://www.ssudy.com/media/GammaruTitle.png">
-                        <h3>겜마루</h3>
-                        <a href="https://everytime.kr/367437/v/372473752">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
-                    <div class="introduce-club-column-one">
-                        <img src="https://blog.kakaocdn.net/dn/0KzHB/btsIz7BrNGX/Rva5TALhRYyZTmxvkqpMG0/img.jpg">
-                        <h3>SALC</h3>
-                        <a href="https://www.instagram.com/ssu_salc/">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
+            <div class="aca_rows">
+                <!-- 각 동아리를 카드로 소개 -->
+                <div class="aca_card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ76OQhvILm4R7gbiUccPwGkfyf7L3j8taKhA&s">
+                    <h3>ACE</h3>
+                    <a href="https://www.instagram.com/ace_soongsil/"><i class="fa-brands fa-instagram"></i></a>
                 </div>
-                <div class="introduce-club-column">
-                    <div class="introduce-club-column-one">
-                        <img src="https://avatars.githubusercontent.com/u/100825457?s=200&v=4">
-                        <h3>SSCC</h3>
-                        <a href="https://www.instagram.com/sscc_ssu/">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
-                    <div class="introduce-club-column-one">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJREgUe27aXa8bxBvdUUqjJWb5-GXraYqIxA&s">
-                        <h3>UMC</h3>
-                        <a href="https://www.instagram.com/ssu_makeus_challenge/">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
-                    <div class="introduce-club-column-one">
-                        <img src="https://blog.kakaocdn.net/dn/0KzHB/btsIz7BrNGX/Rva5TALhRYyZTmxvkqpMG0/img.jpg">
-                        <h3>TIME</h3>
-                        <a href="https://www.instagram.com/ssu_time_/">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
+                <div class="aca_card">
+                    <img src="http://www.ssudy.com/media/GammaruTitle.png">
+                    <h3>겜마루</h3>
+                    <a href="https://everytime.kr/367437/v/372473752"><i class="fa-brands fa-instagram"></i></a>
                 </div>
-                <div class="introduce-club-column">
-                    <div class="introduce-club-column-one">
-                        <img src="https://unarok.org/theme/basic/img/0403.jpg">
-                        <h3>UNSA</h3>
-                        <a href="https://www.instagram.com/unsa_ssu/">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
-                    <div class="introduce-club-column-one">
-                        <img src="https://avatars.githubusercontent.com/u/81421323?s=200&v=4">
-                        <h3>YOURSSU</h3>
-                        <a href="https://www.instagram.com/yourssu_official/">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
-                    <div class="introduce-club-column-one">
-                        <img src="https://www.brandb.net/_next/image?url=https%3A%2F%2Fapi.brandb.net%2Fapi%2Fv2%2Fcommon%2Fimage%2F%3FfileId%3D3011&w=1920&q=75">
-                        <h3>멋쟁이사자처럼</h3>
-                        <a href="https://www.instagram.com/likelion_ssu/">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
+                <div class="aca_card">
+                    <img src="https://blog.kakaocdn.net/dn/0KzHB/btsIz7BrNGX/Rva5TALhRYyZTmxvkqpMG0/img.jpg">
+                    <h3>SALC</h3>
+                    <a href="https://www.instagram.com/ssu_salc/"><i class="fa-brands fa-instagram"></i></a>
                 </div>
-                <div class="introduce-club-column">
-                    <div class="introduce-club-column-one">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9tqN1fByoiY0HvOALAfL4eMfOFz-D9zUh1g&s">
-                        <h3>만장일치</h3>
-                        <a href="https://www.instagram.com/manzzang_official/">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
-                    <div class="introduce-club-column-one">
-                        <img src="https://cdn.ssunews.net/news/photo/201511/4924_3929_352.JPG">
-                        <h3>바람개비</h3>
-                        <a href="https://www.instagram.com/ssu_baramgaebi/">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
-                    <div class="introduce-club-column-one">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxz1Ye_CQ9IfqOgNGRzAz7PcJWGNGTjLf4cQ&s">
-                        <h3>숭실리서치</h3>
-                        <a href="https://www.instagram.com/ssu_research34/">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
+                <div class="aca_card">
+                    <img src="https://avatars.githubusercontent.com/u/100825457?s=200&v=4">
+                    <h3>SSCC</h3>
+                    <a href="https://www.instagram.com/sscc_ssu/"><i class="fa-brands fa-instagram"></i></a>
                 </div>
-
-                <div class="introduce-club-column">
-                    <div class="introduce-club-column-one">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBmqTDkZKrK0LUEjcN6b2xG3Mz6MfrvnDPYA&s">
-                        <h3>아리랑</h3>
-                        <a href="https://www.instagram.com/ssu_arirang/">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
-                    <div class="introduce-club-column-one">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlngQj_m_W1PUtFHWWv5QavwcUrLhACxH8LQ&s">
-                        <h3>우주과학연구회</h3>
-                        <a href="https://www.instagram.com/ssu_cosmos/">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
-                    <div class="introduce-club-column-one">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdCl9tRcfMjZe2WIAfWURfrRbmHU3kBxcg4A&s">
-                        <h3>흥사단아카데미</h3>
-                        <a href="https://everytime.kr/374637/v/372443323"> <!--에타링크-->
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
+                <div class="aca_card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJREgUe27aXa8bxBvdUUqjJWb5-GXraYqIxA&s">
+                    <h3>UMC</h3>
+                    <a href="https://www.instagram.com/ssu_makeus_challenge/"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <div class="aca_card">
+                    <img src="https://blog.kakaocdn.net/dn/0KzHB/btsIz7BrNGX/Rva5TALhRYyZTmxvkqpMG0/img.jpg">
+                    <h3>TIME</h3>
+                    <a href="https://www.instagram.com/ssu_time_/"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <div class="aca_card">
+                    <img src="https://unarok.org/theme/basic/img/0403.jpg">
+                    <h3>UNSA</h3>
+                    <a href="https://www.instagram.com/unsa_ssu/"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <div class="aca_card">
+                    <img src="https://avatars.githubusercontent.com/u/81421323?s=200&v=4">
+                    <h3>YOURSSU</h3>
+                    <a href="https://www.instagram.com/yourssu_official/"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <div class="aca_card">
+                    <img src="https://www.brandb.net/_next/image?url=https%3A%2F%2Fapi.brandb.net%2Fapi%2Fv2%2Fcommon%2Fimage%2F%3FfileId%3D3011&w=1920&q=75">
+                    <h3>멋쟁이사자처럼</h3>
+                    <a href="https://www.instagram.com/likelion_ssu/"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <div class="aca_card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9tqN1fByoiY0HvOALAfL4eMfOFz-D9zUh1g&s">
+                    <h3>만장일치</h3>
+                    <a href="https://www.instagram.com/manzzang_official/"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <div class="aca_card">
+                    <img src="https://cdn.ssunews.net/news/photo/201511/4924_3929_352.JPG">
+                    <h3>바람개비</h3>
+                    <a href="https://www.instagram.com/ssu_baramgaebi/"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <div class="aca_card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxz1Ye_CQ9IfqOgNGRzAz7PcJWGNGTjLf4cQ&s">
+                    <h3>숭실리서치</h3>
+                    <a href="https://www.instagram.com/ssu_research34/"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <div class="aca_card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBmqTDkZKrK0LUEjcN6b2xG3Mz6MfrvnDPYA&s">
+                    <h3>아리랑</h3>
+                    <a href="https://www.instagram.com/ssu_arirang/"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <div class="aca_card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlngQj_m_W1PUtFHWWv5QavwcUrLhACxH8LQ&s">
+                    <h3>우주과학연구회</h3>
+                    <a href="https://www.instagram.com/ssu_cosmos/"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <div class="aca_card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdCl9tRcfMjZe2WIAfWURfrRbmHU3kBxcg4A&s">
+                    <h3>흥사단아카데미</h3>
+                    <a href="https://everytime.kr/374637/v/372443323"><i class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
         </div>
     </main>
 
-
+    <!-- ✅ 폰트어썸 아이콘 로딩 -->
     <script src="https://kit.fontawesome.com/21012219c4.js" crossorigin="anonymous"></script>
+
+    <!-- ✅ 학술분과 펼치기 버튼 기능 구현 -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const toggleButton = document.querySelector(".toggle-list");
             const hiddenList = document.querySelector(".hidden-list");
 
             toggleButton.addEventListener("click", function (event) {
-                event.preventDefault(); // 기본 링크 기능 막기
+                event.preventDefault(); // 링크 이동 방지
 
+                // 현재 상태에 따라 토글
                 if (hiddenList.style.display === "block") {
-                    hiddenList.style.display = "none"; // 닫기
+                    hiddenList.style.display = "none";
                 } else {
-                    hiddenList.style.display = "block"; // 열기
+                    hiddenList.style.display = "block";
                 }
             });
         });
