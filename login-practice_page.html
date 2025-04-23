@@ -1,256 +1,339 @@
 <!DOCTYPE html>
-<!-- HTML5 문서 타입 선언 -->
 <html lang="ko">
 <head>
-  <!-- 문자 인코딩 설정 -->
+  <!-- 문서 기본 설정 -->
   <meta charset="UTF-8" />
-  <!-- 모바일 뷰포트 설정 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- 페이지 제목 -->
   <title>CodePicnic</title>
-  <!-- 외부 CSS 파일 연결 -->
+  <!-- 외부 CSS 불러오기 -->
   <link rel="stylesheet" href="css/login-practice_page.css" />
 </head>
 <body>
   <!-- 전체 앱 컨테이너 -->
   <div class="app-container">
-    <!-- 헤더 로고 텍스트 -->
-    <div class="header-logo">CodePicnic</div>
-    <!-- 헤더 배경 요소 -->
-    <div class="header-login-bg"></div>
-    <!-- '로그인' 텍스트 -->
-    <div class="header-login-text">로그인</div>
-    <!-- 구분선 -->
-    <div class="divider"></div>
-    <!-- 메인 래퍼 -->
+    <!-- 헤더 섹션 -->
+    <div class="header-logo">CodePicnic</div>       <!-- 로고 텍스트 -->
+    <div class="header-login-bg"></div>            <!-- 헤더 배경 -->
+    <div class="header-login-text">로그인</div>    <!-- 헤더 타이틀 -->
+    <div class="divider"></div>                   <!-- 구분선 -->
+
+    <!-- 메인 래퍼: 사이드바 + 콘텐츠 -->
     <div class="main-wrapper">
-      <!-- 메인 배경 요소 -->
-      <div class="main-background"></div>
-      <!-- 사이드바 배경 요소 -->
-      <div class="sidebar-bg"></div>
-      <!-- 사이드바 메뉴 아이템들 -->
+      <div class="main-background"></div>         <!-- 메인 배경 -->
+      <div class="sidebar-bg"></div>              <!-- 사이드바 배경 -->
+
+      <!-- 사이드바 메뉴 -->
       <div class="sidebar-item item-start"   data-page="start">시작하기</div>
       <div class="sidebar-item item-input"   data-page="input">입력받기</div>
       <div class="sidebar-item item-send"    data-page="send">전송하기</div>
       <div class="sidebar-item item-style"   data-page="style">꾸며보기</div>
       <div class="sidebar-item item-doit"    data-page="doit">Do it!</div>
-      <!-- 뒤로가기 버튼: 클릭 시 메인 홈으로 이동 -->
-      <div class="sidebar-item item-back" data-page="back-to-the-main_page"
-           onclick="window.location.href='main-home.html'">뒤로가기</div>
-      <!-- 콘텐츠가 동적으로 삽입될 영역 -->
+      <div class="sidebar-item item-back"    data-page="back-to-the-main_page"
+           onclick="window.location.href='main-home.html'">
+        뒤로가기
+      </div>
+
+      <!-- 실제 콘텐츠가 삽입될 영역 -->
       <div class="main-content" id="content"></div>
     </div>
   </div>
 
   <script>
-    // 저장된 HTML/CSS 코드를 담을 전역 변수
+    // 에디터에 저장될 초기값
     let savedHTML = '<!-- HTML code here -->';
     let savedCSS  = '/* CSS code here */';
 
-    /**
-     * Do it! 페이지로 이동하는 함수
-     * 내부적으로 '.item-doit' 요소를 클릭하여 해당 페이지 로드
-     */
+    // "Do it!" 메뉴로 이동시키는 함수
     function goToDoItPage() {
       document.querySelector('.item-doit').click();
     }
 
-    /**
-     * 페이지별 템플릿 HTML을 담은 객체
-     * 각 속성 값이 innerHTML로 삽입될 마크업 문자열
-     */
+    // 페이지별로 표시할 HTML 템플릿 모음
     const pages = {
+      // 시작하기 화면 템플릿
       start: `
-        <!-- 시작 페이지: 가운데 정렬된 안내 메시지 -->
         <div style="width:100%;margin:0 -60px;display:flex;justify-content:center;">
           <div style="display:flex;align-items:center;gap:20px;">
             <img class="heart-image" src="./3d heart with eyes.png" alt="하트 이미지">
             <div style="width:750px;height:120px;background:white;border-radius:15px;
                         display:flex;align-items:center;justify-content:center;">
-              <p style="margin:0;font-family:'Inter',sans-serif;
-                        font-size:24px;font-weight:600;color:black;">
+              <p style="margin:0;font-family:'Inter',sans-serif;font-size:24px;
+                        font-weight:600;color:black;">
                 로그인 페이지 만들기를 시작해볼까?
               </p>
             </div>
           </div>
         </div>
       `,
+      // 입력받기 화면 템플릿
       input: `
-        <!-- 입력받기 페이지: 입력 폼 예시와 설명 -->
-        <div style="width:100%;margin:0 -60px;display:flex;
-                    flex-direction:column;align-items:center;gap:20px;">
-          <!-- 상단 안내 -->
+        <div style="width:100%;margin:0 -60px;display:flex;flex-direction:column;
+                    align-items:center;gap:20px;">
+          <!-- 상단 설명 -->
           <div style="display:flex;align-items:center;gap:20px;">
             <img class="heart-image" src="./3d heart with eyes.png" alt="하트 이미지">
             <div style="width:750px;height:120px;background:white;border-radius:15px;
                         display:flex;align-items:center;justify-content:center;">
-              <p style="margin:0;font-family:'Inter',sans-serif;
-                        font-size:24px;font-weight:600;color:black;">
+              <p style="margin:0;font-family:'Inter',sans-serif;font-size:24px;
+                        font-weight:600;color:black;">
                 우선 입력을 받는 방법을 알아보자!
               </p>
             </div>
           </div>
-          <!-- 중간 코드 블록 -->
+          <!-- 코드 예시 (form) -->
           <div style="width:1006px;height:221px;background:white;border-radius:15px;
-                      position:relative;display:flex;align-items:center;
-                      justify-content:center;">
-            <pre style="width:987px;height:154px;margin:0;color:black;
-                        font-size:20px;font-family:Inter,sans-serif;
-                        font-weight:600;white-space:pre-wrap;word-wrap:break-word;
-                        background:none;border:none;">
+                      position:relative;display:flex;align-items:center;justify-content:center;">
+            <pre style="width:987px;height:154px;margin:0;color:black;font-size:20px;
+                        font-family:Inter,sans-serif;font-weight:600;white-space:pre-wrap;
+                        word-wrap:break-word;background:none;border:none;">
 &lt;form action="#" method="post"&gt;
   &lt;div class="input-group"&gt;
     &lt;label for="username"&gt;아이디&lt;/label&gt;
-    &lt;input type="text" id="username" name="username" 
-            placeholder="아이디를 입력하세요" required&gt;
+    &lt;input type="text" id="username" name="username"
+             placeholder="아이디를 입력하세요" required&gt;
   &lt;/div&gt;
 &lt;/form&gt;
             </pre>
-            <!-- Do it! 버튼: 클릭 시 다음 단계로 이동 -->
             <button onclick="goToDoItPage()"
-                    style="position:absolute;bottom:10px;right:10px;
-                           width:91px;height:30px;background:#C5E4FF;
-                           border:none;border-radius:5px;color:#0087FC;
-                           font-size:20px;font-family:Inter,sans-serif;
-                           font-weight:600;cursor:pointer;">
+                    style="position:absolute;bottom:10px;right:10px;width:91px;height:30px;
+                           background:#C5E4FF;border:none;border-radius:5px;color:#0087FC;
+                           font-size:20px;font-family:Inter,sans-serif;font-weight:600;
+                           cursor:pointer;">
               Do it!
             </button>
           </div>
-          <!-- 하단 설명 블록 -->
-          <div style="width:1006px;height:420px;background:white;
-                      border-radius:15px;display:flex;align-items:center;
-                      justify-content:center;">
-            <div style="width:987px;height:335px;color:black;
-                        font-size:20px;font-family:Inter,sans-serif;
-                        font-weight:600;word-wrap:break-word;">
-              입력받는 요소를 생성할 때는 <code>input</code> 태그를 사용해야 해. 
-              우리는 <code>input</code> 태그에서 <code>type</code>, 
-              <code>name</code>, <code>placeholder</code> 속성을 사용할 거고 ...
+          <!-- 추가 설명 -->
+          <div style="width:1006px;height:420px;background:white;border-radius:15px;
+                      display:flex;align-items:center;justify-content:center;">
+            <div style="width:987px;height:335px;color:black;font-size:20px;
+                        font-family:Inter,sans-serif;font-weight:600;word-wrap:break-word;">
+              입력받는 요소를 생성할 때는 <code>input</code> 태그를 사용해야 해. …
+              <br/><br/>
+              이렇게 생성한 상호작용 요소에는 이름을 붙일 수도 있는데, <code>label</code> 태그를 사용하면 돼. …
+              <br/><br/>
+              <code>form</code> 태그는 폼 양식을 의미하는 태그야. …
+              <br/><br/>
+              비밀번호를 입력받는 양식도 만들어봐!
             </div>
           </div>
         </div>
       `,
+      // 전송하기 화면 템플릿
       send: `
-        <!-- 전송하기 페이지: submit 버튼 예시 및 설명 -->
-        <div style="width:100%;margin:0 -60px;display:flex;
-                    flex-direction:column;align-items:center;gap:20px;">
-          <!-- 상단 안내 -->
+        <div style="width:100%;margin:0 -60px;display:flex;flex-direction:column;
+                    align-items:center;gap:20px;">
+          <!-- 상단 설명 -->
           <div style="display:flex;align-items:center;gap:20px;">
             <img class="heart-image" src="./3d heart with eyes.png" alt="하트 이미지">
             <div style="width:750px;height:120px;background:white;border-radius:15px;
                         display:flex;align-items:center;justify-content:center;">
-              <p style="margin:0;font-family:'Inter',sans-serif;
-                        font-size:24px;font-weight:600;color:black;">
+              <p style="margin:0;font-family:'Inter',sans-serif;font-size:24px;
+                        font-weight:600;color:black;">
                 입력받은 정보들을 전송하는 방법도 알아볼까?
               </p>
             </div>
           </div>
-          <!-- submit 버튼 코드 블록 -->
+          <!-- 코드 예시 (button) -->
           <div style="width:1006px;height:118px;background:white;border-radius:15px;
                       position:relative;display:flex;align-items:center;
                       justify-content:flex-start;padding-left:10px;">
-            <pre style="margin:0;color:black;font-size:20px;
-                        font-family:Inter,sans-serif;font-weight:600;
-                        white-space:pre-wrap;word-wrap:break-word;
+            <pre style="margin:0;color:black;font-size:20px;font-family:Inter,sans-serif;
+                        font-weight:600;white-space:pre-wrap;word-wrap:break-word;
                         background:none;border:none;text-align:left;">
 &lt;button type="submit" class="btn"&gt;로그인&lt;/button&gt;
             </pre>
-            <button onclick="goToDoItPage()" 
-                    style="position:absolute;bottom:10px;right:10px;
-                           width:91px;height:30px;background:#C5E4FF;
-                           border:none;border-radius:5px;color:#0087FC;
-                           font-size:20px;font-family:Inter,sans-serif;
-                           font-weight:600;cursor:pointer;">
+            <button onclick="goToDoItPage()"
+                    style="position:absolute;bottom:10px;right:10px;width:91px;height:30px;
+                           background:#C5E4FF;border:none;border-radius:5px;color:#0087FC;
+                           font-size:20px;font-family:Inter,sans-serif;font-weight:600;
+                           cursor:pointer;">
               Do it!
             </button>
           </div>
-          <!-- 하단 설명 -->
-          <div style="width:1006px;height:109px;background:white;
-                      border-radius:15px;display:flex;align-items:center;
-                      justify-content:flex-start;padding-left:10px;">
-            <p style="margin:0;color:black;font-size:20px;
-                      font-family:Inter,sans-serif;font-weight:600;
-                      word-wrap:break-word;">
-              버튼 요소를 이용하여 ... type 속성을 "submit"으로 설정하면 ...
+          <!-- 추가 설명 -->
+          <div style="width:1006px;height:109px;background:white;border-radius:15px;
+                      display:flex;align-items:center;justify-content:flex-start;
+                      padding-left:10px;">
+            <p style="margin:0;color:black;font-size:20px;font-family:Inter,sans-serif;
+                      font-weight:600;word-wrap:break-word;">
+              버튼 요소를 이용하여 직관적으로 입력받은 내용을 서버에 전송할 수 있어! …
             </p>
           </div>
         </div>
       `,
+      // 꾸며보기 화면 템플릿
       style: `
-        <!-- 꾸며보기 페이지: CSS 전체 예시 설명 -->
-        <div style="width:100%;margin:0 -60px;display:flex;
-                    flex-direction:column;align-items:center;gap:20px;">
-          <!-- 상단 안내 -->
+        <div style="width:100%;margin:0 -60px;display:flex;flex-direction:column;
+                    align-items:center;gap:20px;">
+          <!-- 상단 설명 -->
           <div style="display:flex;align-items:center;gap:20px;">
             <img class="heart-image" src="./3d heart with eyes.png" alt="하트 이미지">
             <div style="width:750px;height:120px;background:white;border-radius:15px;
                         display:flex;align-items:center;justify-content:center;">
-              <p style="margin:0;font-family:'Inter',sans-serif;
-                        font-size:24px;font-weight:600;color:black;">
+              <p style="margin:0;font-family:'Inter',sans-serif;font-size:24px;
+                        font-weight:600;color:black;">
                 이제 만들어본 요소들을 꾸며보자!
               </p>
             </div>
           </div>
-          <!-- 긴 CSS 예시 블록 -->
-          <div style="width:1026px;height:1950px;background:white;
-                      border-radius:15px;position:relative;display:flex;
-                      align-items:flex-start;justify-content:flex-start;
-                      padding:20px;overflow:auto;margin-bottom:100px;">
-            <pre style="margin:0;color:black;font-size:20px;
-                        font-family:Inter,sans-serif;font-weight:600;
-                        white-space:pre-wrap;word-wrap:break-word;">
+          <!-- CSS 전체 설명 -->
+          <div style="width:1026px;height:1950px;background:white;border-radius:15px;
+                      position:relative;display:flex;align-items:flex-start;
+                      justify-content:flex-start;padding:20px;overflow:auto;
+                      margin-bottom:100px;">
+            <pre style="margin:0;color:black;font-size:20px;font-family:Inter,sans-serif;
+                        font-weight:600;white-space:pre-wrap;word-wrap:break-word;">
 /* 1. body 스타일: 기본 글꼴과 배경색 설정 */
-body { font-family: Arial, sans-serif; background-color: #e0f7ff; color: #333; }
-/* ... 이하 CSS 코드 생략 ... */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e0f7ff;  /* 연한 파란색 배경 */
+  color: #333;                /* 글자색은 어두운 회색 */
+}
+
+/* 2. 로그인 섹션: 화면 중앙에 배치 */
+.login-section {
+  display: flex;
+  flex-direction: column;     /* 세로 방향 정렬 */
+  align-items: center;        /* 가로 중앙 정렬 */
+  justify-content: center;    /* 세로 중앙 정렬 */
+  height: 100vh;              /* 화면 전체 높이 */
+  background-color: #f0faff;  /* 부드러운 파란색 배경 */
+}
+
+/* 3. 페이지 이름: 상단 제목 텍스트 스타일 */
+.page-name {
+  font-size: 2rem;            /* 글자 크기 */
+  margin-bottom: 20px;        /* 아래쪽 여백 */
+  color: #007BFF;             /* 파란색 텍스트 */
+  text-align: center;         /* 가운데 정렬 */
+}
+
+/* 4. 로그인 박스: 입력 폼이 있는 박스 스타일 */
+.login-container {
+  width: 350px;               /* 박스 너비 */
+  padding: 20px;              /* 안쪽 여백 */
+  border: 1px solid #007BFF;  /* 파란색 테두리 */
+  border-radius: 8px;         /* 모서리 둥글게 */
+  background-color: #fff;     /* 흰색 배경 */
+  box-shadow: 0 0 10px rgba(0,123,255,0.2); /* 부드러운 그림자 */
+}
+
+/* 5. 로그인 박스 내부 제목: 폼 제목 스타일 */
+.login-container h2 {
+  text-align: center;         /* 가운데 정렬 */
+  color: #007BFF;             /* 파란색 텍스트 */
+  margin-bottom: 20px;        /* 제목 아래 여백 */
+}
+
+/* 6. 입력 그룹: 각각의 입력란 그룹에 여백 주기 */
+.input-group {
+  margin-bottom: 15px;
+}
+
+/* 7. 레이블: 입력란 설명 텍스트 스타일 */
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #0056b3;             /* 좀 더 진한 파란색 */
+}
+
+/* 8. 입력란: 텍스트와 비밀번호 입력 칸 스타일 */
+.input-group input {
+  width: 100%;
+  padding: 8px;               /* 안쪽 여백 */
+  border: 1px solid #007BFF;  /* 파란색 테두리 */
+  border-radius: 4px;
+}
+
+/* 9. 버튼: 로그인 버튼의 스타일 */
+.btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;  /* 파란색 배경 */
+  border: none;
+  border-radius: 4px;
+  color: #fff;                /* 흰색 글자 */
+  font-size: 16px;
+  cursor: pointer;            /* 마우스 커서 변경 */
+}
+
+/* 마우스를 버튼에 올렸을 때 색상 변경 */
+.btn:hover {
+  background-color: #0056b3;  /* 진한 파란색 */
+}
             </pre>
-            <button onclick="goToDoItPage()" 
-                    style="position:absolute;bottom:10px;right:10px;
-                           width:91px;height:30px;background:#C5E4FF;
-                           border:none;border-radius:5px;color:#0087FC;
-                           font-size:20px;font-family:Inter,sans-serif;
-                           font-weight:600;cursor:pointer;">
+            <button onclick="goToDoItPage()"
+                    style="position:absolute;bottom:10px;right:10px;width:91px;height:30px;
+                           background:#C5E4FF;border:none;border-radius:5px;color:#0087FC;
+                           font-size:20px;font-family:Inter,sans-serif;font-weight:600;
+                           cursor:pointer;">
               Do it!
             </button>
           </div>
         </div>
       `,
+      // Do it! 영역 템플릿
       doitMarkup: `
-        <!-- Do it! 페이지: 코드 에디터 및 결과창 -->
         <div style="width:100%;margin:0 -60px;display:flex;
                     flex-direction:column;align-items:center;gap:20px;">
-          <!-- 상단 안내 -->
+          <!-- 상단 설명 -->
           <div style="display:flex;align-items:center;gap:20px;">
             <img class="heart-image" src="./3d heart with eyes.png" alt="하트 이미지">
             <div style="width:750px;height:120px;background:white;border-radius:15px;
                         display:flex;align-items:center;justify-content:center;">
-              <p style="margin:0;font-family:'Inter',sans-serif;
-                        font-size:24px;font-weight:600;color:black;">
+              <p style="margin:0;font-family:'Inter',sans-serif;font-size:24px;
+                        font-weight:600;color:black;">
                 만들고 싶은 것을 만들어봐!
               </p>
             </div>
           </div>
-          <!-- 에디터 및 결과 영역 -->
+          <!-- HTML/CSS 에디터 + 결과 -->
           <div style="display:flex;gap:20px;margin-top:20px;">
-            <!-- 코드 에디터 박스 -->
             <div style="width:470px;height:562px;position:relative;background:white;
-                        border-radius:15px;display:flex;flex-direction:column;
-                        justify-content:space-between;padding:10px;box-sizing:border-box;">
-              <!-- HTML/CSS 토글 버튼 -->
+                        border-radius:15px;box-sizing:border-box;display:flex;
+                        flex-direction:column;justify-content:space-between;padding:10px;">
+              <!-- 에디터 토글 버튼 -->
               <div style="display:flex;justify-content:center;gap:40px;">
-                <button id="html-btn" style="...">html</button>
-                <button id="css-btn" style="...">css</button>
+                <button id="html-btn"
+                        style="width:164px;height:59px;background:#C6E4FF;border:none;
+                               border-radius:15px;font-family:Inter,sans-serif;
+                               font-size:20px;font-weight:600;cursor:pointer;">
+                  html
+                </button>
+                <button id="css-btn"
+                        style="width:164px;height:59px;background:#C6E4FF;border:none;
+                               border-radius:15px;font-family:Inter,sans-serif;
+                               font-size:20px;font-weight:600;cursor:pointer;">
+                  css
+                </button>
               </div>
-              <!-- textarea 에디터 -->
-              <div id="editor-container" style="position:relative;flex-grow:1;">
-                <textarea id="html-editor" style="..."><!-- HTML code here --></textarea>
-                <textarea id="css-editor" style="display:none;">/* CSS code here */</textarea>
+              <!-- HTML/CSS 에디터 -->
+              <div id="editor-container" style="position:relative;flex-grow:1;
+                                                width:100%;margin-top:10px;box-sizing:border-box;">
+                <textarea id="html-editor"
+                          style="position:absolute;top:0;left:0;width:100%;height:100%;
+                                 border:none;outline:none;resize:none;font-size:20px;
+                                 font-family:Inter,sans-serif;box-sizing:border-box;
+                                 background:white;">
+<!-- HTML code here --></textarea>
+                <textarea id="css-editor"
+                          style="position:absolute;top:0;left:0;width:100%;height:100%;
+                                 border:none;outline:none;resize:none;font-size:20px;
+                                 font-family:Inter,sans-serif;box-sizing:border-box;
+                                 background:white;display:none;">
+/* CSS code here */</textarea>
               </div>
-              <!-- Run it! 버튼 -->
-              <div style="text-align:right;padding:20px 10px 0;">
-                <button id="run-btn" style="...">Run it!</button>
+              <!-- Run 버튼 -->
+              <div style="padding:20px 10px 0 10px;text-align:right;">
+                <button id="run-btn"
+                        style="width:91px;height:30px;background:#C5E4FF;border:none;
+                               border-radius:5px;color:#0087FC;font-size:20px;
+                               font-family:Inter,sans-serif;font-weight:600;cursor:pointer;">
+                  Run it!
+                </button>
               </div>
             </div>
-            <!-- 결과 iframe 박스 -->
+            <!-- 결과 출력 iframe -->
             <div style="width:470px;height:562px;background:white;border-radius:15px;
                         padding:10px;overflow:auto;box-sizing:border-box;">
               <iframe id="result" style="width:100%;height:100%;border:none;"></iframe>
@@ -260,34 +343,34 @@ body { font-family: Arial, sans-serif; background-color: #e0f7ff; color: #333; }
       `
     };
 
-    // Do it! 페이지의 동작 스크립트
+    // Do it! 페이지용 스크립트
     const doitScriptCode = `
       (function(){
         const htmlEditor = document.getElementById('html-editor');
         const cssEditor  = document.getElementById('css-editor');
 
-        // 저장된 코드로 에디터 초기화
+        // 에디터 초기화: 저장된 코드 불러오기
         htmlEditor.value = savedHTML;
         cssEditor.value  = savedCSS;
 
-        // 코드 변경 시 전역 변수 갱신
+        // 입력 시마다 전역 변수 갱신
         htmlEditor.addEventListener('input', () => { savedHTML = htmlEditor.value; });
         cssEditor.addEventListener('input',  () => { savedCSS  = cssEditor.value; });
 
-        // HTML/CSS 토글
-        document.getElementById('html-btn').onclick = () => {
+        // HTML/CSS 탭 전환
+        document.getElementById('html-btn').onclick = ()=> {
           htmlEditor.style.display = 'block';
           cssEditor.style.display  = 'none';
         };
-        document.getElementById('css-btn').onclick = () => {
-          htmlEditor.style.display = 'none';
+        document.getElementById('css-btn').onclick = ()=> {
           cssEditor.style.display  = 'block';
+          htmlEditor.style.display = 'none';
         };
 
-        // Run it! 클릭 시 iframe에 코드 렌더링
-        document.getElementById('run-btn').onclick = () => {
+        // Run it: iframe에 HTML+CSS 렌더링
+        document.getElementById('run-btn').onclick = ()=> {
           const combined = htmlEditor.value + "<style>" + cssEditor.value + "</style>";
-          const iframe = document.getElementById('result');
+          const iframe   = document.getElementById('result');
           iframe.contentWindow.document.open();
           iframe.contentWindow.document.write(combined);
           iframe.contentWindow.document.close();
@@ -295,13 +378,10 @@ body { font-family: Arial, sans-serif; background-color: #e0f7ff; color: #333; }
       })();
     `;
 
-    /**
-     * 사이드바 메뉴 클릭 핸들러
-     * 클릭된 메뉴에 따라 pages 객체에서 해당 콘텐츠 로드
-     */
+    // 사이드바 메뉴 클릭 시 해당 페이지 표시
     document.querySelectorAll('.sidebar-item').forEach(item => {
       item.addEventListener('click', () => {
-        // 모든 메뉴에서 active 제거 후 클릭한 메뉴에 active 추가
+        // active 클래스 토글
         document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
         item.classList.add('active');
 
@@ -309,19 +389,20 @@ body { font-family: Arial, sans-serif; background-color: #e0f7ff; color: #333; }
         const container = document.getElementById('content');
 
         if (key === 'doit') {
-          // Do it! 마크업과 스크립트 삽입
+          // Do it! 화면 삽입
           container.innerHTML = pages.doitMarkup;
+          // Do it! 전용 스크립트 추가
           const s = document.createElement('script');
           s.textContent = doitScriptCode;
           container.appendChild(s);
         } else {
-          // 그 외 페이지 템플릿 삽입
+          // start/input/send/style 페이지만 교체
           container.innerHTML = pages[key] || '';
         }
       });
     });
 
-    // 초기 로드 시 '시작하기' 메뉴 자동 클릭
+    // 초기 화면: 시작하기 클릭
     document.querySelector('.item-start').click();
   </script>
 </body>
