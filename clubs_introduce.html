@@ -4,29 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>숭실대학교 동아리</title>
-    <link rel="stylesheet" href="IntroduceSite.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- 네비게이션 -->
-    <nav class = "nav_bar">
+    <!-- ✅ 상단 고정 내비게이션 바 -->
+    <nav class = "nav_bar"> 
         <div class = "top_nav">
+            <!-- 사이트 메인 페이지로 이동하는 링크 -->
             <a class="site-name" href = "index.html">사이트 이름</a>
+            <!-- 주요 섹션으로 이동하는 메뉴 링크 -->
             <a class = "center-link" href = "clubs_introduce.html">사이트 소개</a>
             <a class = "center-link" href = "clubs.html">동아리</a>
             <a class = "center-link" href = "credit_calculator.html">학점 계산기</a>
+            <a class = "center-link" href = "main-home.html">HTML/CSS 스터디</a>
+            <!-- 로그인 페이지 링크 -->
             <a class = "top_nav-login" href="login.html">로그인</a>
         </div>
     </nav>
 
-    <header>
-        <div class="title-container">
+    <!-- ✅ 페이지 헤더: 배경 이미지와 제목, 내비게이션 경로 -->
+    <header class = "title-page">
+        <div class = "title-page-bg">
+            <!-- 배경 이미지 -->
             <img class = "title-page-bg-img" src ="https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F003%2F2023%2F08%2F29%2FNISI20230822_0001345631_web_20230822085356_20230829060313000.jpg&type=sc960_832">
+            <!-- 페이지 제목 소개 텍스트 -->
+            <div class = "title-page-intro"><p>중앙동아리</p></div>
 
-            <div class = "title-page-intro"><p>소개란</p></div>
+            <!-- 네비게이션 경로 안내 (홈 > 중앙동아리 > 교양분야) -->
+            <div class = "title-page-comment">
+                <a href="index.html" class = "title-page_icon"><i class="fa-solid fa-house"></i></a>
+
+                <div class ="title-page-comment_column">
+                    <dl class = "title-page-comment_column-first">
+                        <dt><a href = "">중앙동아리</a></dt>
+                    </dl>
+
+                    <!-- ✅ 교양분야 메뉴 펼치기 -->
+                    <div class ="title-page-comment_column">
+                        <dl class = "title-page-comment_column-second">
+                            <dt>
+                                <a href ="clubs.html" class ="toggle-list">교양분야</a>
+                            </dt>
+                            <dd class = "hidden-list">
+                                <ul>
+                                    <li><a href ="business_field.html">연대사업분과</a></li>
+                                    <li><a href ="performing_art.html">연행예술분과</a></li>
+                                    <li><a href ="religious_field.html">종교분과</a></li>
+                                    <li><a href ="creative_exhibition.html">창작전시분과</a></li>
+                                    <li><a href ="physical_education.html">체육분과</a></li>
+                                    <li><a href ="academic_field.html">학술분과</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- 메인 컨텐츠 -->
+    <!-- ✅ 메인 컨텐츠: 담당자 명단 표 -->
     <main>
         <h2>담당자 명단 및 연락처</h2>
         <table>
