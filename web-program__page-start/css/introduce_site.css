@@ -1,0 +1,168 @@
+/* ====================================
+   기본 스타일 초기화 (Reset)
+   모든 요소의 기본 여백과 패딩 제거,
+   박스 모델을 border-box로 설정
+   ==================================== */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ====================================
+   바디 기본 설정
+   - 폰트, 줄 높이, 텍스트/배경 색상 지정
+   ==================================== */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+/* ====================================
+   네비게이션 메뉴 전체 컨테이너
+   - 배경색과 텍스트 중앙 정렬
+   ==================================== */
+nav {
+    background-color: #0047ab;
+    text-align: center;
+}
+
+/* ====================================
+   네비게이션 링크 목록
+   - 가로 플렉스 레이아웃, 가운데 정렬
+   ==================================== */
+.navigation {
+    list-style: none;                  /* 기본 리스트 점 제거 */
+    display: flex;                     /* 가로 배치 */
+    justify-content: center;           /* 가운데 정렬 */
+}
+
+/* 각 링크 아이템 간 여백 */
+.navigation li {
+    margin: 0 15px;
+}
+
+/* 네비게이션 링크 스타일 */
+.navigation a {
+    color: white;                      /* 흰색 텍스트 */
+    text-decoration: none;             /* 밑줄 제거 */
+    font-size: 16px;
+    padding: 10px 15px;                /* 클릭 영역 확보 */
+    display: inline-block;
+}
+
+/* 링크 호버 시 배경 강조 및 둥근 모서리 */
+.navigation a:hover {
+    background-color: #3366cc;
+    border-radius: 5px;
+}
+
+/* ====================================
+   메인 콘텐츠 영역
+   - 내부 여백 설정
+   ==================================== */
+main {
+    padding: 20px;
+}
+
+/* 메인 제목 스타일 */
+main h2 {
+    text-align: center;                /* 가로 중앙 정렬 */
+    color: #2a96c8;                    /* 파란 계열 텍스트 */
+    margin-bottom: 20px;
+}
+
+/* ====================================
+   테이블 기본 스타일
+   - 전체 너비, 테두리 없음 설정
+   ==================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;         /* 이웃한 테두리 한 줄로 */
+    margin: 20px 0;
+    background: white;
+}
+
+/* 테이블 헤더 스타일 */
+thead {
+    background-color: #0047ab;
+    color: white;
+}
+
+/* 테이블 셀 공통 스타일 */
+th,
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/* 홀수/짝수 행 배경색 */
+tbody tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+/* 행 호버 시 강조 배경 */
+tbody tr:hover {
+    background-color: #e6f7ff;
+}
+
+/* ====================================
+   추가 바디 설정 (상단 네비게이션용)
+   - margin:40 은 숫자단위 누락, px 단위로 수정 필요
+   ==================================== */
+body {
+    /* margin: 40; <-- 단위 누락, 예: margin: 40px; */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ====================================
+   최상단 네비게이션 바 (topnav)
+   - 플렉스 레이아웃, 배경 흰색, 높이 지정
+   ==================================== */
+.topnav {
+    display: flex;
+    justify-content: flex-start;       /* 왼쪽 정렬 */
+    align-items: center;               /* 세로 중앙 정렬 */
+    overflow: hidden;                  /* 넘치는 내용 숨김 */
+    background-color: #ffffff;
+    height: 60px;                      /* 높이 60px */
+}
+
+/* topnav 링크 기본 스타일 */
+.topnav a {
+    color: #000000;                    /* 검정 텍스트 */
+    text-align: center;
+    padding: 0 40px;                   /* 좌우 40px 패딩 */
+    text-decoration: none;             /* 밑줄 제거 */
+    font-size: 20px;
+    line-height: 60px;                 /* 세로 중앙 정렬 */
+}
+
+/* 로그인 버튼 별도 스타일 */
+.topnav a.login {
+    background-color: rgb(76, 142, 233);
+    border-radius: 8px;                /* 둥근 모서리 */
+    margin-left: auto;                 /* 오른쪽 끝 정렬 */
+    font-size: 24px;
+}
+
+/* 사이트 이름 링크 스타일 */
+.topnav a.site-name {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* topnav 링크 호버 시 스타일 */
+.topnav a:hover {
+    background-color: #ffffff;         /* 흰색 배경 유지 */
+    color: #000000;                    /* 검정 텍스트 유지 */
+}
+
+/* 활성화된 링크 스타일 */
+.topnav a.active {
+    background-color: #a3a5a4;
+    color: white;
+}

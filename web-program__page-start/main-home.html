@@ -1,42 +1,55 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+  <!-- 문자 인코딩 설정 -->
   <meta charset="UTF-8">
+  <!-- 반응형 뷰포트 설정 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 페이지 제목 -->
   <title>개인 HTML/CSS 메인페이지</title>
+  <!-- 외부 CSS 파일 연결 -->
   <link rel="stylesheet" href="main-home.css"/>
 </head>
 <body>
+    <!-- 사이드바 섹션 시작 -->
     <div class="sidebar">
-      <div class = "sidebar-back">
+      <!-- 뒤로 가기 버튼 -->
+      <div class="sidebar-back">
         <a href="index.html"><button>Back</button></a>
       </div>
-      <div class = "sidebar-list">›
+      <!-- 사이드바 내비게이션 버튼 목록 -->
+      <div class="sidebar-list">›
           <button onclick="window.location.href='main-home.html'">네비가이션 만들기</button>
-          <button>로그인 화면 만들기</button>
+          <button onclick="window.location.href='login-practice_page.html'">로그인 화면 만들기</button>
           <button onclick="window.location.href='items-card_format.html'">항목을 카드로 만들기</button>
           <button onclick="window.location.href='practice-clubs_div.html'">동아리 안내상자 만들기</button>
       </div>
     </div>
+    <!-- 사이드바 섹션 끝 -->
   
+    <!-- 메인 콘텐츠 상단 배너 -->
     <div class="main-content">
+      <!-- 배경 또는 대표 이미지 -->
       <img src="https://plus.unsplash.com/premium_vector-1741819139107-fb97d5d5839b?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGlsbHVzdHJhdGV8ZW58MHx8MHx8fDA%3D" alt="character">
+      <!-- 이미지 위 텍스트 오버레이 -->
       <div class="text-overlay">
         <div>Hello!!<br></div>
         <div>Let's go HTML/CSS</div>
       </div>
     </div>
 
-    <!-- 메인 콘텐츠 -->
+    <!-- 메인 콘텐츠 두 번째 섹션 -->
     <div class="main-content-two">
-        <img src="nav-bar.png" id = "main-content-img">
+        <!-- 네비게이션 예시 이미지 -->
+        <img src="nav-bar.png" id="main-content-img">
 
-        <div class="section">
+        <!-- HTML 코드 미리 보기 섹션 제목 -->
+        <div class="section plus">
           <h2>해당 HTML 코드를 먼저 보여줘!!</h2>
         </div>
     
-        <!-- 코드 영역 -->
-        <div class = "code-column">
+        <!-- 코드 블록 영역 -->
+        <div class="code-column">
           <div class="code-section">
             <pre><code>
   &lt;nav&gt;
@@ -52,249 +65,238 @@
           </div>
         </div>
 
-        <!--나의 말 답변-->
-        <div class="section">
+        <!-- 설명 요청 섹션 제목 -->
+        <div class="section plus">
             <h2>코드에 쓴 태그에 대해 알려줘!!</h2>
         </div>
 
-        <div class = "code-column">
+        <!-- 간단한 답변 프리뷰 -->
+        <div class="code-column">
           <div class="section-reverse">
-            <p> nav,div,a 태그에 대해 설명해줄게!!</p>
+            <p>nav, div, a 태그에 대해 설명해줄게!!</p>
           </div>
         </div>
     </div>
 
-    <div class = "main-content-two main-content-end">
-
-      <div class = "code-column">
+    <!-- 메인 콘텐츠 설명 및 본문 -->
+    <div class="main-content-two main-content-end">
+      <!-- 상세 설명 블록 -->
+      <div class="code-column">
         <div class="section-reverse multi-rows">
-          <p><span class = "highlight">nav</span> 요소는 위 사진에서 사이트 이름, 사이트 소개, 동아리, 로그인 버튼을 누르면</p>
-          <p>해당 사이트로 가는 링크를 보여주는 구획을 나타내!!</p>
+          <p><span class="highlight">nav</span> 요소는 사이트 내비게이션 구역을 감싸는 태그야.</p>
+          <p>메뉴 링크들을 묶어서 보여줘!</p>
           <br>
-          <p><span class = "highlight">div</span> 태그는 순수한 컨테이너로서 본질적으로 아무것도 나타내지 않아.</p>
-          <p>하지만 컨텐츠의 구역을 나눌 때 사용해!! 한 눈에 코드를 파악하기 쉽거든!!</p>
+          <p><span class="highlight">div</span> 태그는 아무런 의미 없는 블록 컨테이너야.</p>
+          <p>레이아웃 구분이나 스타일 적용용으로 사용해.</p>
           <br>
-          <p><span class = "highlight">a</span> 태그는 링크야!! nav가 링크를 보여주는 구획이라면</p>
-          <p><span class = "highlight">a</span> 는 <span class = "highlight">href</span> 를 통해 링크를 만들어!!</p>
+          <p><span class="highlight">a</span> 태그는 하이퍼링크를 만드는 태그야.</p>
+          <p><span class="highlight">href</span> 속성에 URL을 지정하면 클릭 시 해당 페이지로 이동해.</p>
         </div>
       </div>
 
-      <div class="section">
+      <!-- 실습 섹션 제목 -->
+      <div class="section plus">
         <h2>직접 실습해볼래!!</h2>
       </div>
 
+      <!-- HTML 실습 입력창 및 버튼 -->
       <div class="HTML-title"><h1>HTML 실습창</h1></div>
-      
       <div class="HTML-pratice">
           <div class="HTML-input">
               <h3>HTML 코드 입력</h3>
-              <textarea id="htmlInput" rows="10" style="width: 100%" placeholder="여기에 html예제를 입력하세요...""></textarea>
+              <!-- 사용자 입력용 textarea -->
+              <textarea id="htmlInput" rows="10" style="width: 100%;" placeholder="여기에 html예제를 입력하세요..."></textarea>
+              <!-- 입력한 HTML만 렌더링 -->
               <button onclick="onlyhtml()" class="update-button">업데이트</button>
+              <!-- 페이지 새로고침 -->
               <button onclick="window.location.reload()" class="newdate-button">페이지 새로고침</button>
           </div> 
           <div class="HTML-output">
               <h3>결과 출력</h3>
+              <!-- HTML 결과 표시 영역 -->
               <div id="html-only-result"></div>
           </div>
       </div>
 
-      <div class = "code-column">
+      <!-- 실습 안내 문구 -->
+      <div class="code-column">
         <div class="section-reverse">
           <p>결과가 이쁘지 않지?? 이제 이쁘게 꾸며볼꺼야!</p>
         </div>
       </div>
-
-      <div class = "code-column">
+      <div class="code-column">
         <div class="section-reverse">
           <p>우선 CSS를 적용한 코드를 보여줄게~!</p>
         </div>
       </div>
 
-      <!-- 코드 영역 -->
-      <div class = "code-column">
+      <!-- CSS 적용된 HTML 예시 코드 블록 -->
+      <div class="code-column">
         <div class="code-section width-big">
           <pre><code>
-          &lt;nav class = "nav_bar"&gt;
-          &lt;div class = "top_nav"&gt;
-              &lt;a class = "site-name" href="index.html"&gt;사이트 이름&lt;/a&gt;
-              &lt;a class = "center-link" href="clubs_introduce.html"&gt;사이트 소개&lt;/a&gt;
-              &lt;a class = "center-link" href="clubs.html"&gt;동아리&lt;/a&gt;
-              &lt;a class = "center-link" href="apps.html"&gt;대학생활 필수 앱&lt;/a&gt;
-              &lt;a class = "top_nav-login" href="login.html"&gt;로그인&lt;/a&gt;
-          &lt;/div&gt;
-          &lt;/nav&gt;
+  &lt;nav class="nav_bar"&gt;
+    &lt;div class="top_nav"&gt;
+      &lt;a class="site-name" href="index.html"&gt;사이트 이름&lt;/a&gt;
+      &lt;a class="center-link" href="clubs_introduce.html"&gt;사이트 소개&lt;/a&gt;
+      &lt;a class="center-link" href="clubs.html"&gt;동아리&lt;/a&gt;
+      &lt;a class="center-link" href="apps.html"&gt;대학생활 필수 앱&lt;/a&gt;
+      &lt;a class="top_nav-login" href="login.html"&gt;로그인&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/nav&gt;
           </code></pre>
         </div>
       </div>
 
-      <!--클래시 예시 보여주기-->
+      <!-- 클래스별 CSS 설명 텍스트 영역 -->
       <div class="introduce-class">
-        <h3>top-nav 클래스 소개</h3>
+        <h3>top_nav 클래스 소개</h3>
         <textarea class="introduce-class-text">
 .top_nav {
-  display: flex; /* 플렉스박스 사용 */
-  align-items: center; /* 수직 가운데 정렬 */
-  overflow: hidden; /* 내용이 넘칠 경우 숨김 */
-  background-color: #ffffff; /* 흰색 배경 */
-  height: 60px; /* 네비게이션 바의 높이 */
-  padding: 0 20px; /* 네비게이션 바 좌우 내부 여백 */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 하단 그림자 */
+  display: flex;               /* 플렉스박스 사용으로 요소 간에 정렬 가능 */
+  align-items: center;         /* 수직 가운데 정렬 */
+  overflow: hidden;            /* 넘침 내용 숨김 */
+  background-color: #ffffff;   /* 흰 배경 */
+  height: 60px;                /* 높이 설정 */
+  padding: 0 20px;             /* 좌우 padding 즉 border로부터 공간 확보 */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 그림자 수평값, 그림자 수직값, 흐림의 정도, 색상  */
 }
-
-/* 모든 링크 공통 기본 스타일 */
 .top_nav a {
-  text-decoration: none;
-  white-space: nowrap; /* 줄바꿈 방지 */
-}
-      </textarea>
-      </div>
-      <!--클래시 예시02 보여주기-->
-      <div class="introduce-class">
-        <h3>site-name이랑 center-link 클래스 소개</h3>
-        <textarea class="introduce-class-text">
-/* 사이트 이름 스타일 */
-.site-name {
-    font-size: 20px;
-    font-weight: bold;
-    color: #000000; /* 검정색 */
-    margin-right: auto; /* 오른쪽에 있는 요소들을 밀어냄 */
-    /* padding-right 제거됨 */
-}
-
-/* 중앙 메뉴 링크 스타일 */
-.center-link {
-  color: #212529; /* 기본 글자색 (어두운 회색) */
-  font-size: 16px;
-  padding: 0 30px; /* 중앙 링크들 사이의 좌우 여백 */
-  line-height: 60px; /* 높이에 맞춰 수직 중앙 정렬 */
-  text-align: center;
-}
-
-/* 첫 번째 중앙 링크 왼쪽에 간격 추가 */
-.center-link:first-of-type {
-  margin-left: 20px;
-}
-
-/* 마지막 중앙 링크 오른쪽에 간격 추가 */
-.center-link:last-of-type {
-  margin-right: 20px;
-}
-
-/* 마우스 오버 효과 */
-.center-link:hover {
-  color: #0d6efd; /* 마우스 오버 시 파란색 */
+  text-decoration: none;       /* 밑줄 제거 */
+  white-space: nowrap;         /* 줄바꿈 방지 */
 }
         </textarea>
       </div>
-      <!--클래시 예시03 보여주기-->
+
+      <div class="introduce-class">
+        <h3>site-name & center-link 클래스 소개</h3>
+        <textarea class="introduce-class-text">
+.site-name {
+  font-size: 20px;            /* 글자 크기 */
+  font-weight: bold;          /* 글자 두께 두껍게 */
+  color: #000;                /* 검정색 */
+  margin-right: auto;         /* 오른쪽 항목을 자동으로 밀어냄 = 반응형 웹사이트 만들기 */
+}
+.center-link {
+  color: #212529;             /* 어두운 회색 */
+  font-size: 16px;
+  padding: 0 30px;            /* 좌우 패딩 */
+  line-height: 60px;          /*  줄과 줄 사이 간격 */
+  text-align: center;         /* 글자를 가운데로! */
+}
+.center-link:first-of-type {
+  margin-left: 20px;          /* 첫 번째 요소 왼쪽 간격 */
+}
+.center-link:last-of-type {
+  margin-right: 20px;         /* 마지막 요소 오른쪽 간격 */
+}
+.center-link:hover {
+  color: #0d6efd;             /* 마우스 위에 올릴 시 파란색 */
+}
+        </textarea>
+      </div>
+
       <div class="introduce-class">
         <h3>top_nav-login 클래스 소개</h3>
         <textarea class="introduce-class-text">
-  /*로그인 버튼 설정*/
-.top_nav-login{
-    border: 1px solid #0d6efd; /* 파란색 테두리 */
-    border-radius : 4px;
-    padding: 6px 10px; /* !!! 내부 좌우 여백 조정 (너비 줄임) !!! */
-    font-size: 16px;
-    line-height: normal; /* 버튼 높이에 맞게 line-height 초기화 */
-    color: #0d6efd; /* 파란색 글자 */
-    background-color: transparent;
-    margin-left: auto; /* 왼쪽에 있는 요소들을 밀어냄 (오른쪽 배치 위해) */
-    text-align: center; /* 텍스트 가운데 정렬 명시 (a태그 기본값 고려) */
+.top_nav-login {
+  border: 1px solid #0d6efd;   /* 파란색 테두리 */
+  border-radius: 4px;          /* 모서리를 둥글게 만들기 */
+  padding: 6px 10px;           /* 버튼 내부 패딩 => 버튼이 커짐 */
+  font-size: 16px;
+  background-color: transparent;  /* 배경을 투명하게 */
+  color: #0d6efd;              /* 파란색 글자 */
+  margin-left: auto;           /* 오른쪽 정렬 = 반응형 웹 사이트 만들기 */
+  text-align: center;
 }
-
-  /* 로그인 버튼 위에 마우스 오버 효과*/
 .top_nav .top_nav-login:hover {
-  background-color: #0d6efd; /* 마우스 오버 시 파란색 배경 */
-  color: #ffffff; /* 흰색 글자 */
-}         
+  background-color: #0d6efd;   /* 마우스 위에 올릴 시 배경 파란색 */
+  color: #fff;                 /* 흰색 글자 */
+}
         </textarea>
       </div>
 
-      <div class = "code-column">
+      <!-- 반복 학습 유도 문구 -->
+      <div class="code-column">
         <div class="section-reverse">
-          <p> 배운 Html 코드랑 class를 보고 <p>
-          <p> 한번 따라해보고 위치/색/글자 등등 바꿔봐</p>
+          <p>배운 HTML 코드랑 클래스를 보고</p>
+          <p>한번 따라해보고 위치/색/글자 등 바꿔봐</p>
         </div>
       </div>
 
-      <!--최종 실습 구간-->     
+      <!-- 최종 실습 영역 -->
       <div class="introduce-class final-example-height">
-
-          <!-- 토글 버튼 -->
+        <!-- 입력 탭 토글 -->
         <div class="final-example-toggle">
-          <button class = "final-example-toggle-button" onclick="ButtonClick('html')">HTML 입력</button>
-          <button class = "final-example-toggle-button" onclick="ButtonClick('css')">CSS 입력</button>
+          <button class="final-example-toggle-button" onclick="ButtonClick('html')">HTML 입력</button>
+          <button class="final-example-toggle-button" onclick="ButtonClick('css')">CSS 입력</button>
         </div>
-         <!-- HTML 입력창과 CSS입력창 나누기-->
-        <div class = "final-example-text">
+        <!-- HTML/CSS 입력창 -->
+        <div class="final-example-text">
           <textarea id="HTML-Input" class="introduce-class-text"></textarea>
           <textarea id="CSS-Input" class="introduce-class-text"></textarea>
         </div>
-        <!--업데이트 시키는 버튼 / 페이지 새로고침-->
+        <!-- 업데이트 및 새로고침 버튼 -->
         <div>
           <button onclick="updateOutput()" class="update-button">업데이트</button>
           <button onclick="window.location.reload()" class="newdate-button">페이지 새로고침</button>
         </div>
       </div> 
 
+      <!-- 최종 결과 출력 -->
       <div class="HTML-output">
-          <h3>결과 출력</h3>
-          <div id="html-CSS-result"></div>
+        <h3>결과 출력</h3>
+        <div id="html-CSS-result"></div>
       </div>
-     
 
+      <!-- 추가 실험 유도 문구 -->
       <div class="section size-auto">
-        <h2>예시:margin-left : 32px; 로 바꾸었더니 위치가 32px 만큼 떨어져 있네??</h2>
-        <h2>    아니다! background-color를 바꾸어 볼까??</h2>
+        <h2>예시: margin-left:32px; 로 바꾸었더니 위치가 32px 만큼 떨어져 있네??</h2>
+        <h2>아니다! background-color를 바꿔볼까??</h2>
       </div>
-
-
     </div>
 
+    <!-- 스크립트 섹션 -->
     <script>
-      // 맨 처음 Html 결과 출력하는 함수
+      /**
+       * onlyhtml: HTML 입력만 반영하는 함수
+       */
       function onlyhtml() {
-        // 해당 html 코드
-        var htmlCode = document.getElementById("htmlInput").value;
-        // 결과를 보여줄 영역에 HTML 코드 반영하기
+        const htmlCode = document.getElementById("htmlInput").value;
         document.getElementById("html-only-result").innerHTML = htmlCode;
-
       }
 
-      // HTMl, CSS 버튼 클릭시 해당 입력창 뜨게 하는 함수
+      /**
+       * ButtonClick: HTML/CSS 입력창 토글 함수
+       * @param {string} type - 'html' 또는 'css'
+       */
       function ButtonClick(type) {
         const htmlEditor = document.getElementById("HTML-Input");
-        const cssEditor = document.getElementById('CSS-Input');
-
+        const cssEditor  = document.getElementById("CSS-Input");
         if (type === 'html') {
-            htmlEditor.style.display = 'block';
-            cssEditor.style.display = 'none';
-        }
-        else if (type == 'css') {
-            htmlEditor.style.display = 'none';
-            cssEditor.style.display = 'block';
+          htmlEditor.style.display = 'block';
+          cssEditor.style.display  = 'none';
+        } else {
+          htmlEditor.style.display = 'none';
+          cssEditor.style.display  = 'block';
         }
       }
-
-      // 처음에는 HTML 입력창만 보이게
+      // 초기 로드시 HTML 입력창만 보이도록 설정
       ButtonClick('html');
 
-      // 사용자가 작성한 HTML 코드로 결과를 업데이트하는 함수
+      /**
+       * updateOutput: HTML/CSS 입력을 결과 영역에 반영하는 함수
+       */
       function updateOutput() {
-            // 텍스트영역에서 HTML 코드 가져오기
-            var htmlCode = document.getElementById("HTML-Input").value;
-            // 텍스트영역에서 CSS 코드 가져오기
-            var CSSCode = document.getElementById("CSS-Input").value;
-            
-            // 결과를 보여줄 영역에 HTML 코드 반영하기
-            document.getElementById("html-CSS-result").innerHTML = htmlCode;
-            // 결과를 보여줄 영역에 CSS 코드 반영하기
-            const styleTag = document.createElement('style');
-            styleTag.innerHTML = CSSCode;
-            document.head.appendChild(styleTag); // head 태그에 style 만들어주기!
-        }
-
+        const htmlCode = document.getElementById("HTML-Input").value;
+        const cssCode  = document.getElementById("CSS-Input").value;
+        // HTML 결과 반영
+        document.getElementById("html-CSS-result").innerHTML = htmlCode;
+        // CSS 결과 반영: <style> 태그 생성 후 head에 추가
+        const styleTag = document.createElement('style');
+        styleTag.innerHTML = cssCode;
+        document.head.appendChild(styleTag);
+      }
     </script>
 </body>
 </html>
+

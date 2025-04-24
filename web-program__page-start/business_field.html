@@ -7,33 +7,39 @@
     <title>Business_field</title>
 </head>
 <body>
-    <!--내비게이션 창 fix-->
-    <nav class = "nav_bar">
+    <!-- ✅ 상단 고정 내비게이션 바 -->
+    <nav class = "nav_bar"> 
         <div class = "top_nav">
+            <!-- 사이트 메인 페이지로 이동하는 링크 -->
             <a class="site-name" href = "index.html">사이트 이름</a>
+            <!-- 주요 섹션으로 이동하는 메뉴 링크 -->
             <a class = "center-link" href = "clubs_introduce.html">사이트 소개</a>
             <a class = "center-link" href = "clubs.html">동아리</a>
             <a class = "center-link" href = "credit_calculator.html">학점 계산기</a>
+            <a class = "center-link" href = "main-home.html">HTML/CSS 스터디</a>
+            <!-- 로그인 페이지 링크 -->
             <a class = "top_nav-login" href="login.html">로그인</a>
         </div>
     </nav>
 
+    <!-- ✅ 페이지 헤더: 배경 이미지와 제목, 내비게이션 경로 -->
     <header class = "title-page">
         <div class = "title-page-bg">
+            <!-- 배경 이미지 -->
             <img class = "title-page-bg-img" src ="https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F003%2F2023%2F08%2F29%2FNISI20230822_0001345631_web_20230822085356_20230829060313000.jpg&type=sc960_832">
-            
-            <div class = "title-page-intro"><p>중앙동아리</></div>
+            <!-- 페이지 제목 소개 텍스트 -->
+            <div class = "title-page-intro"><p>중앙동아리</p></div>
 
+            <!-- 네비게이션 경로 안내 (홈 > 중앙동아리 > 연대사업분과) -->
             <div class = "title-page-comment">
                 <a href="index.html" class = "title-page_icon"><i class="fa-solid fa-house"></i></a>
-    
+
                 <div class ="title-page-comment_column">
                     <dl class = "title-page-comment_column-first">
-                        <dt>
-                            <a href = "">중앙동아리</a>
-                        </dt>
+                        <dt><a href = "">중앙동아리</a></dt>
                     </dl>
-    
+
+                    <!-- ✅ 연대사업분과 메뉴 펼치기 -->
                     <div class ="title-page-comment_column">
                         <dl class = "title-page-comment_column-second">
                             <dt>
@@ -56,93 +62,76 @@
         </div>
     </header>
 
-    <main class = "introduce-club">
+    <!-- ✅ 연대사업분과 동아리 소개 카드 목록 -->
+    <main class = "bus_container">
         <div class = "introduce-club-field">
             <div class = "introduce-club-field__title">
-                <h1>연대사업분야</h1>
+                <h1 class="bus_h1">연대사업분과</h1>
             </div>
-
-            <div class = "introduce-club-list">
-                <div class="introduce-club-column">
-                    <div class="introduce-club-column-one">
-                        <img src="https://ugc.production.linktr.ee/6QOgTZvKQDKkeWzjbFAU_85R3Y44ichGRhD45?io=true&size=avatar-v3_0">
-                        <h3>땅의사람들</h3>
-                        <a href="https://www.instagram.com/ssu_ddang4/">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
-                    <div class="introduce-club-column-one">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIjaqCTthITHHWGiswj8WsXNYVn_UU5DrtPg&s">
-                        <h3>로타랙트</h3>
-                        <a href="https://www.instagram.com/ssu_rota/">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
-                    <div class="introduce-club-column-one">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzOd-4s1XsJ23hNN-klhhnWYTfwxJRF6BGRQ&s">
-                        <h3>산들바람</h3>
-                        <a href="https://www.instagram.com/ssu_breeze/">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
+        
+            <div class="bus_rows">   
+                <!-- 각 동아리를 카드 형식으로 구성 -->
+                <div class="bus_card">
+                    <img src="https://ugc.production.linktr.ee/6QOgTZvKQDKkeWzjbFAU_85R3Y44ichGRhD45?io=true&size=avatar-v3_0">
+                    <h3>땅의사람들</h3>
+                    <a href="https://www.instagram.com/ssu_ddang4/"><i class="fa-brands fa-instagram"></i></a>
                 </div>
-                <div class="introduce-club-column">
-                    <div class="introduce-club-column-one">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRusPnpOa3H5e_gXehXYIX5gKV-UZNhnFz2BA&s">
-                        <h3>소리보임</h3>
-                        <a href="https://www.instagram.com/sori_bo.im_/?locale=sl">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
-                    <div class="introduce-club-column-one">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnlMuoUbSThlj3ad4sy0_Z2mT_bncP8T8jEg&s">
-                        <h3>숭실리더십학생협회</h3>
-                        <a href="https://www.instagram.com/aiesec_in_ssu/">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
-                    <div class="introduce-club-column-one">
-                        <img src="https://go.kcu.ac/assets/images/sub07/img-0210.png">
-                        <h3>어리회</h3>
-                        <a href="https://www.instagram.com/ssu_hencoop/">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
+                <div class="bus_card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIjaqCTthITHHWGiswj8WsXNYVn_UU5DrtPg&s">
+                    <h3>로타랙트</h3>
+                    <a href="https://www.instagram.com/ssu_rota/"><i class="fa-brands fa-instagram"></i></a>
                 </div>
-                <div class="introduce-club-column">
-                    <div class="introduce-club-column-one">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnT3hlGM8gPFElkItHG_53B1LzyKG4GsVODQ&s">
-                        <h3>어린이사랑회</h3>
-                        <a href="https://www.instagram.com/childrenlove_1989/">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
-                    <div class="introduce-club-column-one">
-                        <img src="https://go.kcu.ac/assets/images/sub07/img-0210.png">
-                        <h3>호우회</h3>
-                        <a href="https://www.instagram.com/ssu_howoo/">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
+                <div class="bus_card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzOd-4s1XsJ23hNN-klhhnWYTfwxJRF6BGRQ&s">
+                    <h3>산들바람</h3>
+                    <a href="https://www.instagram.com/ssu_breeze/"><i class="fa-brands fa-instagram"></i></a>
                 </div>
-            </div>
+                <div class="bus_card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRusPnpOa3H5e_gXehXYIX5gKV-UZNhnFz2BA&s">
+                    <h3>소리보임</h3>
+                    <a href="https://www.instagram.com/sori_bo.im_/?locale=sl"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <div class="bus_card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnlMuoUbSThlj3ad4sy0_Z2mT_bncP8T8jEg&s">
+                    <h3>숭실리더십학생협회</h3>
+                    <a href="https://www.instagram.com/aiesec_in_ssu/"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <div class="bus_card">
+                    <img src="https://go.kcu.ac/assets/images/sub07/img-0210.png">
+                    <h3>어리회</h3>
+                    <a href="https://www.instagram.com/ssu_hencoop/"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <div class="bus_card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnT3hlGM8gPFElkItHG_53B1LzyKG4GsVODQ&s">
+                    <h3>어린이사랑회</h3>
+                    <a href="https://www.instagram.com/childrenlove_1989/"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <div class="bus_card">
+                    <img src="https://go.kcu.ac/assets/images/sub07/img-0210.png">
+                    <h3>호우회</h3>
+                    <a href="https://www.instagram.com/ssu_howoo/"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>      
         </div>
     </main>
 
-
+    <!-- ✅ 폰트어썸 아이콘 로딩 -->
     <script src="https://kit.fontawesome.com/21012219c4.js" crossorigin="anonymous"></script>
+
+    <!-- ✅ 메뉴 펼치기 버튼 동작 스크립트 -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const toggleButton = document.querySelector(".toggle-list");
             const hiddenList = document.querySelector(".hidden-list");
 
             toggleButton.addEventListener("click", function (event) {
-                event.preventDefault(); // 기본 링크 기능 막기
+                event.preventDefault(); // 기본 링크 기능 방지
 
+                // 리스트 표시/숨김 토글
                 if (hiddenList.style.display === "block") {
-                    hiddenList.style.display = "none"; // 닫기
+                    hiddenList.style.display = "none";
                 } else {
-                    hiddenList.style.display = "block"; // 열기
+                    hiddenList.style.display = "block";
                 }
             });
         });
